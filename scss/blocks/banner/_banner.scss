@@ -1,0 +1,119 @@
+.banner {
+  width: 100%;
+  height: 470rem;
+  background-image: url("../img/background-banner.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-text {
+    width: 500rem;
+
+    &__title {
+      margin-bottom: 20rem;
+    }
+  }
+
+  &-image {
+    position: absolute;
+    width: 329rem;
+    height: 400rem;
+    top: 24rem;
+    right: 220rem;
+
+    & img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 120rem;
+      left: -138rem;
+      display: block;
+      width: 442rem;
+      height: 284rem;
+      border-radius: 442rem;
+      background: radial-gradient(130.97% 128.38% at 41.86% 30.28%, rgba(255, 255, 255, 0.70) 3.3%, rgba(19, 54, 180, 0.70) 81.12%);
+
+      filter: blur(40px);
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+
+    &-image {
+      right: 100rem;
+
+      &:after {
+        left: -120rem;
+        display: block;
+        width: 340rem;
+        height: 145rem;
+      }
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+
+    &-text{
+      width: 420rem;
+    }
+
+    &-image {
+      width: 230rem;
+      height: 290rem;
+      top: auto;
+      /* bottom: 26px; */
+      right: 60rem;
+
+      &:after {
+        left: -120rem;
+        display: block;
+        width: 340rem;
+        height: 145rem;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+
+    &__container{
+      align-items: start;
+    }
+
+    &-text {
+      padding-top: 50rem;
+      width: auto;
+    }
+
+    &-image {
+      top: auto;
+      bottom: 40rem;
+      left: 50%;
+      right: auto;
+      width: 170rem;
+      height: 200rem;
+      transform: translateX(-50%);
+
+      &:after {
+        top: 50rem;
+        left: -36rem;
+        width: 200rem;
+        height: 150rem;
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,56 @@
+.container {
+  padding-left: 150rem;
+  padding-right: 150rem;
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    padding-left: 75rem;
+    padding-right: 75rem;
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    padding-left: 30rem;
+    padding-right: 30rem;
+  }
+
+  @media (max-width: $mobile) {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+}
+
+.title-main {
+  font-family: 'YagpoSambhotaUni';
+  font-weight: 400;
+  font-size: 45rem;
+  line-height: 58rem;
+
+  @media (max-width: $mobile) {
+    font-size: 30rem;
+    line-height: 40rem;
+  }
+}
+
+.title {
+  font-family: 'YagpoSambhotaUni';
+  font-weight: 400;
+  font-size: 40rem;
+  line-height: 60rem;
+
+  @media (min-width: $mobile-above) and (max-width: $desktop) {
+    font-size: 34rem;
+    line-height: 46rem;
+  }
+
+  @media (max-width: $mobile) {
+    font-size: 28rem;
+    line-height: 38rem;
+  }
+}
+
+#reasons, #stages, #info-block, #serv, #consultation{
+  scroll-margin-top: 100rem;
+  @media (max-width: $mobile) {
+    scroll-margin-top: 50rem;
+  }
+}
+

@@ -1,0 +1,122 @@
+.stages {
+  padding: 80rem 0;
+  background: linear-gradient(180deg, #1D1D1E 20.73%, #103459 72%, #0050A0 100%);
+
+  &-container {
+    display: grid;
+    grid-template-areas: "title-description stages"
+      "stages-button stages";
+    column-gap: 155rem;
+  }
+
+  &__title-description {
+
+    display: flex;
+    flex-direction: column;
+    width: 527rem;
+    grid-area: title-description;
+
+    & p {
+      margin-bottom: 60rem;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20rem;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30rem;
+    grid-area: stages;
+
+    &__item {
+      &-title {
+        font-family: 'Montserrat';
+        font-size: 22rem;
+        line-height: 140%;
+        font-weight: 500;
+        text-transform: inherit;
+      }
+
+      &-title-wrapper {
+        display: flex;
+        column-gap: 15rem;
+        margin-bottom: 20rem;
+
+        & span {
+          font-size: 16rem;
+          line-height: 140%;
+        }
+      }
+
+      &-description {
+        color: #B6B6B6;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #FFF;
+
+        & .stages-list__item-description {
+          margin-bottom: 30rem;
+        }
+      }
+    }
+  }
+
+  &__button {
+    grid-area: stages-button;
+    margin-bottom: 300rem;
+  }
+
+  @media (max-width: $desktop) {
+
+    &-container {
+      column-gap: 0;
+    }
+
+    &__button {
+      margin: 0;
+    }
+
+    &__title-description {
+      & p {
+        margin: 0;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    &-container {
+      grid-template-areas: "title-description stages-button"
+        "stages stages";
+      row-gap: 60rem;
+      justify-content: space-between;
+    }
+
+    &__button {
+      justify-self: end;
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    padding: 40rem 0;
+
+    &-container {
+      grid-template-areas: "title-description"
+        "stages"
+        "stages-button";
+      row-gap: 50rem;
+    }
+
+    &__title-description {
+      width: 100%;
+    }
+
+    &__button {
+      justify-self: center;
+    }
+  }
+}

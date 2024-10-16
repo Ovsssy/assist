@@ -1,0 +1,29 @@
+.phone-link {
+  display: flex;
+  column-gap: 10rem;
+
+  &:not(:last-child) {
+    margin-right: 30rem;
+  }
+
+  &:last-child {
+    display: none;
+  }
+
+  @media (max-width: $tablet) {
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      display: flex;
+    }
+
+    & span {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+}

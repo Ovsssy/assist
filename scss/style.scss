@@ -1,0 +1,27 @@
+@import 'normalize', 'media', 'globals', 'fonts';
+
+@import 'blocks/utils/phone-link';
+
+@import 'blocks/layout/header', 'blocks/layout/footer';
+
+@import 'blocks/utils/navigation', 'blocks/utils/logotype', 'blocks/utils/button', 'blocks/utils/burger-menu', 'blocks/utils/top-bar';
+ 
+@import 'blocks/assistance/assistance';
+
+@import 'blocks/reasons/reasons';
+
+@import 'blocks/services/services';
+
+@import 'blocks/banner/banner';
+
+@import 'blocks/stages/stages';
+
+@import 'blocks/before-form/before-form';
+
+@import 'blocks/consultation/consultation', 'blocks/consultation/checkbox';
+
+@import 'blocks/info-block/info-block';
+
+@import 'blocks/utils/utils', 'blocks/utils/popup', 'blocks/utils/form', 'blocks/utils/page-container', 'blocks/utils/social';
+
+@import 'blocks/404/not-page'

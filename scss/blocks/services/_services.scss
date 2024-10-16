@@ -1,0 +1,303 @@
+.services {
+  background: var(--gradient, linear-gradient(180deg, #323136 0%, #1D1D1E 100%));
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-areas: "services-title services-btn"
+      "services-list services-list";
+    grid-template-columns: 1fr 1fr;
+    padding: 80rem 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__wrapper-title-button {
+    border-bottom: 1px solid #515151;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+  }
+
+  &-wrapper-list {
+    position: relative;
+    padding-top: 60rem;
+    grid-area: services-list;
+    z-index: 1;
+  }
+
+  &__title {
+    width: 663rem;
+    line-height: 150%;
+    margin-bottom: 30rem;
+    grid-area: services-title;
+    z-index: 1;
+  }
+
+  &__button {
+    grid-area: services-btn;
+    justify-self: end;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20rem;
+
+    &__item {
+      position: relative;
+      padding: 20rem;
+      height: 300rem;
+      cursor: pointer;
+
+      &-title {
+        margin-bottom: 20rem;
+        font-family: 'Montserrat';
+        font-size: 20rem;
+        line-height: 140%;
+        font-weight: 600;
+        text-transform: inherit
+      }
+
+      & p {
+        font-size: 16rem;
+        line-height: 140%;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      &-button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60rem;
+        height: 60rem;
+        border: 2px solid #FFF;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0);
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+        opacity: 0;
+
+        &-wrapper {
+          position: absolute;
+          bottom: 20rem;
+          right: 20rem;
+        }
+
+        & img {
+          width: 24rem;
+          height: 24rem;
+        }
+
+        &:before {
+          content: '';
+          display: block;
+          width: 24rem;
+          height: 24rem;
+          background-image: url("../img/button-icon.svg");
+          background-size: 24rem 24rem;
+        }
+      }
+
+      &-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      &:first-child {
+        grid-column: 1/3;
+
+        & p {
+          width: 442rem;
+        }
+      }
+
+      &:last-child {
+        grid-column: 3/5;
+
+        & p {
+          width: 442rem;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(29, 29, 30, 0.70) 20.73%, rgba(16, 52, 89, 0.70) 72%, rgba(0, 80, 160, 0.70) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      &:hover {
+        & p {
+          opacity: 1;
+        }
+
+        & .services-list__item-button {
+          opacity: 1;
+        }
+
+        &:before {
+          opacity: 0;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__background {
+      position: absolute;
+      top: 0rem;
+      right: -200rem;
+      width: 1030rem;
+      height: 1030rem;
+      border-radius: 1030rem;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(0, 80, 160, 0.80) 0%, rgba(0, 29, 58, 0.00) 100%);
+      filter: blur(10px);
+      overflow: hidden;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    &-list {
+      &__item {
+
+        & p {
+          opacity: 1;
+        }
+
+        & .services-list__item-button {
+          opacity: 1;
+        }
+
+        &:before {
+          opacity: 1;
+        }
+
+        &:after {
+          opacity: 1;
+        }
+
+        &:hover {
+          &:before {
+            opacity: 1;
+          }
+
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+
+    &-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+
+      &__item {
+        &:first-child {
+          grid-column: unset;
+        }
+
+        &:last-child {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    &__container {
+      padding: 40rem 0;
+    }
+
+    &-wrapper-list {
+      padding: 0;
+    }
+
+    &__container {
+      grid-template-areas: "services-title"
+        "services-list"
+        "services-btn";
+      grid-template-columns: 1fr;
+    }
+
+    &__title {
+      margin-bottom: 30rem;
+      width: auto;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40rem;
+    }
+
+    &__button {
+      justify-self: center;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &-list {
+
+      &__item {
+
+        &-button-wrapper{
+          display: none;
+        }
+
+        &:first-child {
+          & p {
+            width: unset;
+          }
+        }
+
+        &:last-child {
+          & p {
+            width: unset;
+          }
+        }
+
+        & p {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

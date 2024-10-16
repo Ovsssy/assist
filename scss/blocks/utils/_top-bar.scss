@@ -1,0 +1,30 @@
+.top-bar {
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    column-gap: 40rem;
+    background-color: #000;
+  }
+
+  @media (max-width: $tablet) {
+
+    &__container {
+      flex-direction: column;
+      row-gap: 8rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: $mobile) {
+
+    & .address,
+    & .schedule {
+      font-size: 13rem;
+      line-height: 16rem;
+    }
+  }
+}

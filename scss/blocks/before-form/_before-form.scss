@@ -1,0 +1,13 @@
+.before-form{
+  width: 100%;
+  height: 450rem;
+  & img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $tablet) {
+    height: 300rem;
+  }
+}

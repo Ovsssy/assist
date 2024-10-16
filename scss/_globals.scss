@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  //outline: solid red;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #262628;
+  min-width: 0px;
+
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'YagpoSambhotaUni';
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #FFF;
+}
+
+a,
+span,
+p,
+address, li {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 18rem;
+  line-height: 24rem;
+  font-style: inherit;
+  color: #FFF;
+
+  @media (max-width: 480px) {
+    font-size: 16rem;
+    line-height: 22rem;
+  }
+}
+
+input,
+input::placeholder {
+  font-family: 'Montserrat';
+  font-size: 16rem;
+  line-height: 140%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}

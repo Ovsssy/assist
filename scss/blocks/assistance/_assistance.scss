@@ -1,0 +1,189 @@
+.assistance {
+  position: relative;
+  padding: 338rem 0 150rem 0;
+  background: linear-gradient(180deg, #222222 0%, #0050A0 100%);
+  z-index: 0;
+
+  &__slogan {
+    display: flex;
+    align-items: center;
+    column-gap: 20rem;
+    margin-bottom: 83rem;
+
+    &-image {
+      display: flex;
+      justify-content: center;
+      width: 68rem;
+      height: 63rem;
+      flex-shrink: 0;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-text {
+      & h3 {
+        font-size: 24rem;
+        line-height: 30rem;
+      }
+    }
+  }
+
+  &__title {
+    width: 710rem;
+    margin-bottom: 20rem;
+  }
+
+  &__description {
+    width: 527rem;
+  }
+
+  &__button {
+
+    position: absolute;
+    top: -54rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    &-wrapper {
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &-wrapper {
+      position: absolute;
+      display: block;
+      width: 1127rem;
+      height: 100%;
+      background-color: #0C0C0C99;
+      clip-path: polygon(0 0, 56% 0, 100% 100%, 0% 100%);
+    }
+
+    &-logo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      & img {
+        width: 100%;
+        height: 105%;
+      }
+    }
+
+    &-car {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1920rem;
+      z-index: 1;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $desktop) {
+    padding: 175rem 0 150rem 0;
+
+    &__description {
+      margin-bottom: 30rem;
+    }
+
+    &__background {
+      &-car {
+        width: 1200rem;
+      }
+    }
+
+    &__button {
+
+      position: static;
+      margin: 0;
+
+      &-wrapper {
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+
+    &__background {
+      &-wrapper {
+        width: 840rem;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &__background {
+      &-car {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+
+    &__background {
+      &-wrapper {
+        width: 675rem;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 110rem 0 60rem 0;
+
+    &__slogan {
+      margin-bottom: 50rem;
+
+      &-image {
+        padding-top: 5rem;
+        width: 70rem;
+        height: 70rem;
+
+        & img {
+          width: 50rem;
+          height: 50rem;
+        }
+      }
+
+      &-text {
+        & h3 {
+          font-size: 22rem;
+          line-height: 28rem;
+        }
+      }
+    }
+
+    &__title {
+      width: 100%;
+    }
+
+    &__description {
+      width: 100%;
+    }
+
+    &__background {
+      &-wrapper {
+        width: 100%;
+      }
+    }
+  }
+}

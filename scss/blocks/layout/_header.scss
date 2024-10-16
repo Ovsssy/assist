@@ -1,0 +1,254 @@
+.header {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+
+  &__container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30rem;
+    padding-bottom: 30rem;
+    border-bottom: 1px solid #969798;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+
+    &--fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #262628;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    &--active {
+      height: 100vh;
+    }
+  }
+
+  &__logotype {
+    width: 161rem;
+    height: 36rem;
+    transition: transform 0.3s;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__navigation {
+    display: flex;
+  }
+
+  &__list {
+    width: 556rem;
+    margin-right: 350rem;
+  }
+
+  &__item {
+    position: relative;
+    transition: transform 0.5s ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background-color: #0050A0;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    &:hover {
+      transform: translateX(10rem);
+
+      &~.header__item {
+        transform: translateX(10rem);
+      }
+
+      &:before {
+        opacity: 1;
+        transform: translateX(-20rem);
+      }
+    }
+  }
+
+  &__phone-link {
+
+    &-icon {
+      width: 24rem;
+      height: 24rem;
+
+      & path {
+        transition: fill 0.3s;
+      }
+    }
+
+    &-second {
+      display: none;
+    }
+
+    & span {
+      position: relative;
+      transition: color 0.3s, opacity 0.3s;
+    }
+
+    &:hover {
+      & span {
+        color: #0069D2;
+      }
+
+      & .header__phone-link-icon {
+        & path {
+          fill: #0069D2;
+        }
+      }
+    }
+  }
+
+  &__email {
+    display: none;
+  }
+
+  @media (min-width:$tablet-above) and (max-width: $desktop) {
+    &__list {
+      margin-right: 100rem;
+    }
+  }
+
+  @media (max-width: $tablet) {
+
+    &__container {
+      &--active {
+        & .header__logotype {
+          display: none;
+        }
+      }
+    }
+
+    &__navigation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      padding: 60rem 0;
+      width: 100%;
+      background-color: #FFF;
+      transform: translateY(-100%);
+      transition: transform 0.5s, opacity 0.5s;
+      opacity: 0;
+
+      &--active {
+        flex-direction: column;
+        opacity: 1;
+        transform: translateY(0%);
+        z-index: 1;
+      }
+    }
+
+    &__list {
+      flex-direction: column;
+      width: unset;
+
+      &.navigation__list {
+        justify-content: start;
+        margin-right: 0;
+      }
+    }
+
+    &__item {
+
+      & a {
+        padding: 15rem 0;
+        padding-left: 35rem;
+        width: 100%;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      &:hover {
+        transform: translateX(0rem);
+
+        &~.header__item {
+          transform: translateX(0rem);
+        }
+
+        &:before {
+          opacity: 0;
+          transform: translateX(0rem);
+        }
+      }
+    }
+
+    &__phone-link {
+
+      &-second {
+        display: flex;
+      }
+
+      &--active {
+        width: 100%;
+        padding: 15rem 0;
+        padding-left: 35rem;
+
+        & svg {
+          z-index: 1;
+
+          & path {
+            fill: #000;
+            transition: none;
+            transition: opacity 0.3s;
+          }
+        }
+
+        & span {
+          display: block;
+          font-weight: 700;
+          color: #000;
+          opacity: 1;
+          transition: opacity 1s;
+          z-index: 1;
+        }
+      }
+    }
+
+    &__email {
+      display: flex;
+      column-gap: 10rem;
+      width: 100%;
+      padding: 15rem 0;
+      padding-left: 35rem;
+
+      & img{
+        width: 24rem;
+        height: 24rem;
+      }
+
+      & span {
+        font-weight: 700;
+        color: #000;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &__container {
+      padding-top: 15rem;
+      padding-bottom: 20rem;
+    }
+
+    &-item {
+      padding-left: 20rem;
+    }
+  }
+}

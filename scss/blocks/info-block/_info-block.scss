@@ -1,0 +1,291 @@
+.info-block {
+  padding: 80rem 0 60rem 0;
+  background-color: #262628;
+
+  &-container {
+    display: grid;
+    grid-template-areas: "logotype contact-schedule"
+      "qr menu-address";
+  }
+
+  &-logotype-wrapper {
+    grid-area: logotype;
+
+    & p {
+      margin-bottom: 40rem;
+      font-size: 18rem;
+      line-height: 140%;
+      color: #B6B6B6;
+    }
+  }
+
+  &__qr {
+    grid-area: qr;
+    width: 132rem;
+    height: 132rem;
+
+    &-wrapper{
+      display: flex;
+      align-items: center;
+      column-gap: 20rem;
+    }
+  }
+
+  &__logotype {
+    width: 253rem;
+    height: 75rem;
+    margin-bottom: 10rem;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-contact-schedule {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50rem;
+    grid-area: contact-schedule;
+  }
+
+  &-contacts {
+    display: flex;
+    flex-direction: column;
+    width: 334rem;
+
+    &__phone {
+      margin-bottom: 10rem;
+
+      & span {
+        font-family: "Yagpo Tibetan Sambhota Uni";
+        font-size: 36rem;
+        font-weight: 400;
+        line-height: 130%;
+        text-transform: uppercase;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        & span {
+          color: #0069D2;
+        }
+      }
+    }
+
+    &__email {
+      & span {
+        font-size: 24rem;
+        line-height: 140%;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        & span {
+          color: #0069D2;
+        }
+      }
+    }
+  }
+
+  &-work-time {
+    display: flex;
+    align-self: center;
+    column-gap: 10rem;
+    width: 390rem;
+
+    &__image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80rem;
+      height: 80rem;
+      flex-shrink: 0;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-menu-address {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30rem;
+    grid-area: menu-address;
+    border-top: 1px solid #b6b6b6;
+  }
+
+  &-nav {
+    width: 334rem;
+
+    &-navigation {
+      width: 100%;
+
+      &__list {
+        flex-wrap: wrap;
+        row-gap: 10rem;
+      }
+
+      &__item {
+
+        & a {
+          transition: color 0.3s;
+        }
+
+        &:hover {
+          & a {
+            color: #0069D2;
+          }
+        }
+      }
+    }
+  }
+
+  &-office {
+    display: flex;
+    column-gap: 15rem;
+    width: 390rem;
+
+    &__image-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80rem;
+      height: 80rem;
+      flex-shrink: 0;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 15rem;
+    font-family: 'Montserrat';
+    font-size: 18rem;
+    line-height: 140%;
+    text-transform: inherit;
+    color: #B6B6B6;
+  }
+
+  @media (max-width: $desktop) {
+    &-logotype-wrapper {
+      & p {
+        margin: 0;
+      }
+    }
+  }
+
+  @media (min-width: $tablet-above) and (max-width: $desktop) {
+    &-container {
+      grid-template-areas: "logotype qr"
+        "contact-schedule contact-schedule"
+        "menu-address menu-address";
+      justify-content: space-between;
+    }
+
+    &-contact-schedule {
+      padding-bottom: 30rem;
+    }
+
+    &__qr {
+
+      margin-bottom: 30rem;
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 390rem;
+      }
+    }
+  }
+
+  @media (min-width: $mobile-above) and (max-width: $tablet) {
+    &-container {
+      grid-template-areas: "logotype qr"
+        "contact-schedule contact-schedule"
+        "menu-address menu-address";
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0;
+      row-gap: 30rem;
+    }
+
+    &-contact-schedule{
+      padding: 0;
+    }
+
+    &__qr {
+      margin: 0;
+
+      &-wrapper{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: 40rem 0;
+
+    &-office,
+    &-nav,
+    &-contacts,
+    &-work-time {
+      width: 320rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 40rem 0;
+
+    &-container {
+      grid-template-areas: "logotype"
+        "qr"
+        "contact-schedule"
+        "menu-address";
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 30rem;
+    }
+
+    &-contact-schedule,
+    &-menu-address {
+      flex-direction: column;
+      padding: 0;
+      row-gap: 30rem;
+    }
+
+    &-contacts {
+
+      &__phone {
+        & span {
+          font-size: 40rem;
+        }
+      }
+
+      &__email {
+        & span {
+          font-size: 20rem;
+        }
+      }
+    }
+
+    &-menu-address {
+      padding-top: 0rem;
+      border: none;
+    }
+
+    &-nav {
+      &-navigation {
+        &__list {
+          flex-direction: column;
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
+}
